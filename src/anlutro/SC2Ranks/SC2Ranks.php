@@ -342,7 +342,7 @@ class SC2Ranks
 	protected function checkForErrors($result)
 	{
 		if (($this->returnArray && isset($result['error'])) || isset($result->error)) {
-			throw new \RuntimeException('Error from SC2Ranks: '.$result->error);
+			throw new SC2RanksException('Error from SC2Ranks: '.$result->error);
 		}
 	}
 

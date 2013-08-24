@@ -1,7 +1,7 @@
 # SC2Ranks v2 API - PHP implementation
 [![Build Status](https://travis-ci.org/anlutro/sc2ranks-v2.png?branch=master)](https://travis-ci.org/anlutro/sc2ranks-v2)
 
-A simple object-oriented implementation of the second version of SC2Ranks API.
+A simple object-oriented implementation of the second version of SC2Ranks API. The implementation parses JSON returned from the SC2Ranks API server and doesn't do anything to manipulate it. Check out the [API documentation](http://www.sc2ranks.com/api) for information on how the returned data is structured.
 
 ## Usage
 ```php
@@ -12,7 +12,7 @@ $player = $sc2r->getPlayerFromProfileUrl('http://eu.battle.net/sc2/en/profile/18
 try {
 	$teams = $sc2r->getPlayerTeams($player);
 	var_dump($teams);
-} catch (SC2RanksException $e) {
+} catch (\anlutro\SC2Ranks\SC2RanksException $e) {
 	echo $e->getMessage();
 }
 ```
