@@ -1,0 +1,13 @@
+{
+  "url": "http://www.sc2ranks.com/clan/am/Monty/lorem-ipsum-dolor-sit",
+  "region": "am",
+  "tag": "Monty",
+  "description": "Lorem ipsum dolor sit",
+  "members": 1,
+  "updated_at": 1370570003,
+  "scores": {
+    "top": 11,
+    "avg": 21,
+    "sum": 31
+  }
+}

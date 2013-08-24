@@ -1,0 +1,93 @@
+[
+  {
+    "error": "invalid",
+    "bnet_id": "1",
+    "region": "invalid"
+  },
+  {
+    "error": "invalid",
+    "bnet_id": "invalid",
+    "region": "us"
+  },
+  {
+    "replay_url": "http://www.sc2ranks.com/character/us/4161722/frozz/replays",
+    "vod_url": "http://www.sc2ranks.com/character/us/4161722/frozz/vods",
+    "url": "http://www.sc2ranks.com/character/us/4161722/frozz",
+    "achievement_points": 0,
+    "updated_at": 1360274680,
+    "swarm_levels": {
+      "zerg": 0,
+      "protoss": 0,
+      "terran": 0
+    },
+    "region": "us",
+    "bnet_id": 4161722,
+    "name": "frozz",
+    "clan": {
+      "url": "http://www.sc2ranks.com/clan/us/Foo",
+      "tag": "Foo"
+    },
+    "teams": [
+      {
+        "url": "http://www.sc2ranks.com/team/am/11004161722/",
+        "rank_region": "am",
+        "expansion": "hots",
+        "league": "grandmaster",
+        "last_game_at": 1375826680,
+        "bracket": 1,
+        "random": false,
+        "points": 437,
+        "wins": 20,
+        "losses": 33,
+        "win_ratio": 0.3773,
+        "division": {
+          "id": "5202c4784970cf81e7000006",
+          "rank": 199
+        },
+        "rankings": {
+          "world": 1,
+          "region": 1
+        }
+      },
+      {
+        "url": "http://www.sc2ranks.com/team/am/11004161722/",
+        "rank_region": "am",
+        "expansion": "hots",
+        "league": "grandmaster",
+        "last_game_at": 1375826681,
+        "bracket": 1,
+        "random": false,
+        "points": 437,
+        "wins": 20,
+        "losses": 33,
+        "win_ratio": 0.3773,
+        "division": {
+          "id": "5202c4784970cf81e7000006",
+          "rank": 199
+        },
+        "rankings": {
+          "world": 1,
+          "region": 1
+        }
+      }
+    ]
+  },
+  {
+    "replay_url": "http://www.sc2ranks.com/character/us/1234/frozz/replays",
+    "vod_url": "http://www.sc2ranks.com/character/us/1234/frozz/vods",
+    "url": "http://www.sc2ranks.com/character/us/1234/frozz",
+    "achievement_points": 0,
+    "updated_at": 1360274680,
+    "swarm_levels": {
+      "zerg": 0,
+      "protoss": 0,
+      "terran": 0
+    },
+    "region": "us",
+    "bnet_id": 1234,
+    "name": "frozz",
+    "teams": [
+
+    ]
+  }
+]

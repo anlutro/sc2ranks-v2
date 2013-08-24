@@ -1,0 +1,96 @@
+{
+  "id": "51fc38734970cf3f98000006",
+  "url": "http://www.sc2ranks.com/division/am/192413001/grandmaster",
+  "name": "Grandmaster",
+  "rank_region": "am",
+  "expansion": "hots",
+  "league": "grandmaster",
+  "bracket": 1,
+  "random": false,
+  "characters": 5,
+  "avg_points": 50.0,
+  "avg_wins": 12.5,
+  "avg_losses": 1.93,
+  "avg_games": 20.3,
+  "avg_win_ratio": 0.5913,
+  "updated_at": 1375480419,
+  "teams": [
+    {
+      "url": "http://www.sc2ranks.com/team/am/11004161722/frozz",
+      "rank_region": "am",
+      "expansion": "hots",
+      "league": "grandmaster",
+      "last_game_at": 1375397619,
+      "bracket": 1,
+      "random": false,
+      "points": 437,
+      "wins": 20,
+      "losses": 33,
+      "win_ratio": 0.3773,
+      "division": {
+        "id": "51fc38734970cf3f98000006",
+        "rank": 199
+      },
+      "rankings": {
+        "world": 1,
+        "region": 1
+      },
+      "characters": [
+        {
+          "replay_url": "http://www.sc2ranks.com/character/us/4161722/frozz/replays",
+          "vod_url": "http://www.sc2ranks.com/character/us/4161722/frozz/vods",
+          "url": "http://www.sc2ranks.com/character/us/4161722/frozz/hots/1v1",
+          "race": "zerg",
+          "region": "us",
+          "bnet_id": 4161722,
+          "name": "frozz",
+          "clan": {
+            "url": "http://www.sc2ranks.com/clan/us/Monty",
+            "tag": "Monty"
+          }
+        }
+      ]
+    },
+    {
+      "url": "http://www.sc2ranks.com/team/am/11004161722/frozz",
+      "rank_region": "am",
+      "expansion": "hots",
+      "league": "grandmaster",
+      "last_game_at": 1375397619,
+      "bracket": 1,
+      "random": false,
+      "points": 437,
+      "wins": 20,
+      "losses": 33,
+      "win_ratio": 0.3773,
+      "division": {
+        "id": "51fc38734970cf3f98000006",
+        "rank": 199
+      },
+      "rankings": {
+        "world": 1,
+        "region": 1
+      },
+      "characters": [
+        {
+          "replay_url": "http://www.sc2ranks.com/character/us/4161722/frozz/replays",
+          "vod_url": "http://www.sc2ranks.com/character/us/4161722/frozz/vods",
+          "url": "http://www.sc2ranks.com/character/us/4161722/frozz/hots/1v1",
+          "race": "zerg",
+          "region": "us",
+          "bnet_id": 4161722,
+          "name": "frozz",
+          "clan": {
+            "url": "http://www.sc2ranks.com/clan/us/Monty",
+            "tag": "Monty"
+          }
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "limit": 10,
+    "offset": 0,
+    "total": 5
+  }
+}

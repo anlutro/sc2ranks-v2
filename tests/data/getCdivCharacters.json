@@ -1,0 +1,40 @@
+{
+  "id": "51fc3d354970cf40d7000004",
+  "url": "http://www.sc2ranks.com/cdiv/51fc3d354970cf40d7000004/foo",
+  "name": "foo",
+  "description": "bar",
+  "members": 2,
+  "public": false,
+  "characters": [
+    {
+      "replay_url": "http://www.sc2ranks.com/character/us/4161722/frozz/replays",
+      "vod_url": "http://www.sc2ranks.com/character/us/4161722/frozz/vods",
+      "url": "http://www.sc2ranks.com/character/us/4161722/frozz",
+      "achievement_points": 0,
+      "updated_at": 1359846837,
+      "swarm_levels": {
+        "zerg": 0,
+        "protoss": 0,
+        "terran": 0
+      },
+      "region": "us",
+      "bnet_id": 4161722,
+      "name": "frozz"
+    },
+    {
+      "replay_url": "http://www.sc2ranks.com/character/us/1234/frozz/replays",
+      "vod_url": "http://www.sc2ranks.com/character/us/1234/frozz/vods",
+      "url": "http://www.sc2ranks.com/character/us/1234/frozz",
+      "achievement_points": 0,
+      "updated_at": 1359846837,
+      "swarm_levels": {
+        "zerg": 0,
+        "protoss": 0,
+        "terran": 0
+      },
+      "region": "us",
+      "bnet_id": 1234,
+      "name": "frozz"
+    }
+  ]
+}

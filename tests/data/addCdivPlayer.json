@@ -1,0 +1,22 @@
+[
+  {
+    "error": "invalid",
+    "bnet_id": "1",
+    "region": "invalid"
+  },
+  {
+    "error": "invalid",
+    "bnet_id": "invalid",
+    "region": "us"
+  },
+  {
+    "error": "added",
+    "bnet_id": 4161722,
+    "region": "us"
+  },
+  {
+    "error": "already_added",
+    "bnet_id": 1234,
+    "region": "us"
+  }
+]

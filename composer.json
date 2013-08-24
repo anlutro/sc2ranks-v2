@@ -1,0 +1,26 @@
+{
+    "name": "anlutro/sc2ranks-v2",
+    "description": "PHP implementation of SC2Ranks API V2",
+    "keywords": ["starcraft"],
+    "homepage": "https://github.com/anlutro/sc2ranks-v2",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Lutro",
+            "email": "anlutro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "lib-curl": "*"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "anlutro\\SC2Ranks": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

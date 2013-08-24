@@ -1,0 +1,17 @@
+{
+  "id": "51fc38734970cf3f98000006",
+  "url": "http://www.sc2ranks.com/division/am/192413001/grandmaster",
+  "name": "Grandmaster",
+  "rank_region": "am",
+  "expansion": "hots",
+  "league": "grandmaster",
+  "bracket": 1,
+  "random": false,
+  "characters": 5,
+  "avg_points": 50.0,
+  "avg_wins": 12.5,
+  "avg_losses": 1.93,
+  "avg_games": 20.3,
+  "avg_win_ratio": 0.5913,
+  "updated_at": 1375480419
+}

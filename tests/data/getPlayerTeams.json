@@ -1,0 +1,74 @@
+[
+  {
+    "url": "http://www.sc2ranks.com/team/am/11004161722/frozz",
+    "rank_region": "am",
+    "expansion": "hots",
+    "league": "grandmaster",
+    "last_game_at": 1375307693,
+    "bracket": 1,
+    "random": false,
+    "points": 437,
+    "wins": 20,
+    "losses": 33,
+    "win_ratio": 0.3773,
+    "division": {
+      "id": "51fad92d4970cf8401000006",
+      "rank": 199
+    },
+    "rankings": {
+      "world": 1,
+      "region": 1
+    },
+    "characters": [
+      {
+        "replay_url": "http://www.sc2ranks.com/character/us/4161722/frozz/replays",
+        "vod_url": "http://www.sc2ranks.com/character/us/4161722/frozz/vods",
+        "url": "http://www.sc2ranks.com/character/us/4161722/frozz/hots/1v1",
+        "race": "zerg",
+        "region": "us",
+        "bnet_id": 4161722,
+        "name": "frozz",
+        "clan": {
+          "url": "http://www.sc2ranks.com/clan/us/Monty",
+          "tag": "Monty"
+        }
+      }
+    ]
+  },
+  {
+    "url": "http://www.sc2ranks.com/team/am/11004161722/frozz",
+    "rank_region": "am",
+    "expansion": "hots",
+    "league": "grandmaster",
+    "last_game_at": 1375307693,
+    "bracket": 1,
+    "random": false,
+    "points": 437,
+    "wins": 20,
+    "losses": 33,
+    "win_ratio": 0.3773,
+    "division": {
+      "id": "51fad92d4970cf8401000006",
+      "rank": 199
+    },
+    "rankings": {
+      "world": 1,
+      "region": 1
+    },
+    "characters": [
+      {
+        "replay_url": "http://www.sc2ranks.com/character/us/4161722/frozz/replays",
+        "vod_url": "http://www.sc2ranks.com/character/us/4161722/frozz/vods",
+        "url": "http://www.sc2ranks.com/character/us/4161722/frozz/hots/1v1",
+        "race": "zerg",
+        "region": "us",
+        "bnet_id": 4161722,
+        "name": "frozz",
+        "clan": {
+          "url": "http://www.sc2ranks.com/clan/us/Monty",
+          "tag": "Monty"
+        }
+      }
+    ]
+  }
+]

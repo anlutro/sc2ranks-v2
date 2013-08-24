@@ -1,0 +1,58 @@
+{
+  "url": "http://www.sc2ranks.com/clan/am/Monty/lorem-ipsum-dolor-sit",
+  "region": "am",
+  "tag": "Monty",
+  "description": "Lorem ipsum dolor sit amett",
+  "members": 1,
+  "updated_at": 1370570073,
+  "scores": {
+    "top": 11,
+    "avg": 21,
+    "sum": 31
+  },
+  "characters": [
+    {
+      "replay_url": "http://www.sc2ranks.com/character/us/4161722/frozz/replays",
+      "vod_url": "http://www.sc2ranks.com/character/us/4161722/frozz/vods",
+      "url": "http://www.sc2ranks.com/character/us/4161722/frozz",
+      "achievement_points": 0,
+      "updated_at": 1360202073,
+      "swarm_levels": {
+        "zerg": 0,
+        "protoss": 0,
+        "terran": 0
+      },
+      "region": "us",
+      "bnet_id": 4161722,
+      "name": "frozz",
+      "clan": {
+        "url": "http://www.sc2ranks.com/clan/us/Monty",
+        "tag": "Monty"
+      }
+    },
+    {
+      "replay_url": "http://www.sc2ranks.com/character/us/1234/frozz/replays",
+      "vod_url": "http://www.sc2ranks.com/character/us/1234/frozz/vods",
+      "url": "http://www.sc2ranks.com/character/us/1234/frozz",
+      "achievement_points": 0,
+      "updated_at": 1360202073,
+      "swarm_levels": {
+        "zerg": 0,
+        "protoss": 0,
+        "terran": 0
+      },
+      "region": "us",
+      "bnet_id": 1234,
+      "name": "frozz",
+      "clan": {
+        "url": "http://www.sc2ranks.com/clan/us/Monty",
+        "tag": "Monty"
+      }
+    }
+  ],
+  "pagination": {
+    "limit": 50,
+    "offset": 0,
+    "total": 2
+  }
+}

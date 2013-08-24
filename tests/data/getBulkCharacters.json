@@ -1,0 +1,31 @@
+[
+  {
+    "error": "invalid",
+    "bnet_id": "1",
+    "region": "apple"
+  },
+  {
+    "error": "invalid",
+    "bnet_id": "gqer3",
+    "region": "us"
+  },
+  {
+    "replay_url": "http://www.sc2ranks.com/character/us/1234/frozz/replays",
+    "vod_url": "http://www.sc2ranks.com/character/us/1234/frozz/vods",
+    "url": "http://www.sc2ranks.com/character/us/1234/frozz",
+    "achievement_points": 0,
+    "updated_at": 1359758537,
+    "swarm_levels": {
+      "zerg": 0,
+      "protoss": 0,
+      "terran": 0
+    },
+    "region": "us",
+    "bnet_id": 1234,
+    "name": "frozz",
+    "clan": {
+      "url": "http://www.sc2ranks.com/clan/us/Monty",
+      "tag": "Monty"
+    }
+  }
+]
