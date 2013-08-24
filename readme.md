@@ -37,5 +37,10 @@ try {
 - `removeCdivPlayer($divId, Player $player)` Remove a player from a custom division.
 - `getRemainingCredits()` See how many remaining credits for API calls you have.
 
+# Contact
+Open an issue on GitHub if you have any problems or suggestions.
+
+If you have any questions or want to have a chat, look for anlutro @ chat.freenode.net.
+
 # License
 The contents of this repository is released under the [MIT license](http://opensource.org/licenses/MIT).
