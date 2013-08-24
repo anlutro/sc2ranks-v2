@@ -23,16 +23,18 @@ class TestCase extends PHPUnit_Framework_TestCase
 
 	protected function expectPost($url, $data = array())
 	{
+		$that = $this;
+
 		return $this->curl->shouldReceive('post')->once()
-			->with(m::on(function($postUrl) use($url) {
-				$this->assertEquals($postUrl, $url);
+			->with(m::on(function($postUrl) use($url, $that) {
+				$that->assertEquals($postUrl, $url);
 				return true;
 			}),
 			$this->apiKey,
-			m::on(function($post) use($data) {
+			m::on(function($post) use($data, $that) {
 				foreach ($data as $key => $val) {
-					$this->assertArrayHasKey($key, $post, 'POST data missing');
-					$this->assertEquals($post[$key], $val, 'POST data mismatch');
+					$that->assertArrayHasKey($key, $post, 'POST data missing');
+					$that->assertEquals($post[$key], $val, 'POST data mismatch');
 				}
 				return true;
 			}));
@@ -40,16 +42,18 @@ class TestCase extends PHPUnit_Framework_TestCase
 
 	protected function expectDelete($url, $data = array())
 	{
+		$that = $this;
+
 		return $this->curl->shouldReceive('delete')->once()
-			->with(m::on(function($delUrl) use($url) {
-				$this->assertEquals($delUrl, $url);
+			->with(m::on(function($delUrl) use($url, $that) {
+				$that->assertEquals($delUrl, $url);
 				return true;
 			}),
 			$this->apiKey,
-			m::on(function($del) use($data) {
+			m::on(function($del) use($data, $that) {
 				foreach ($data as $key => $val) {
-					$this->assertArrayHasKey($key, $del, 'DELETE data missing');
-					$this->assertEquals($del[$key], $val, 'DELETE data mismatch');
+					$that->assertArrayHasKey($key, $del, 'DELETE data missing');
+					$that->assertEquals($del[$key], $val, 'DELETE data mismatch');
 				}
 				return true;
 			}));
@@ -57,9 +61,11 @@ class TestCase extends PHPUnit_Framework_TestCase
 
 	protected function expectGet($url)
 	{
+		$that = $this;
+
 		return $this->curl->shouldReceive('get')->once()
-			->with(m::on(function($postUrl) use($url) {
-				$this->assertEquals($postUrl, $url);
+			->with(m::on(function($postUrl) use($url, $that) {
+				$that->assertEquals($postUrl, $url);
 				return true;
 			}), $this->apiKey);
 	}
