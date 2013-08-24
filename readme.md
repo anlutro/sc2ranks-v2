@@ -1,4 +1,6 @@
 # SC2Ranks v2 API - PHP implementation
+[![Build Status](https://travis-ci.org/anlutro/sc2ranks-v2.png?branch=master)](https://travis-ci.org/anlutro/sc2ranks-v2)
+
 A simple object-oriented implementation of the second version of SC2Ranks API.
 
 ## Usage
