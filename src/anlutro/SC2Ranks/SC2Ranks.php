@@ -26,6 +26,8 @@ class SC2Ranks
 
 	protected $returnArray = false;
 
+	protected $creditsSpent = array();
+
 	public function __construct($apiKey, $curl = null)
 	{
 		$this->apiKey = $apiKey;
@@ -292,6 +294,21 @@ class SC2Ranks
 		return $this->curl->getHeaders('X-Credits-Left');
 	}
 
+	public function getSumCreditsSpent()
+	{
+		return array_sum($this->creditsSpent);
+	}
+
+	public function getCreditsSpent()
+	{
+		return $this->creditsSpent;
+	}
+
+	public function getCreditsSpentLast()
+	{
+		return $this->curl->getHeaders('X-Credits-Used');
+	}
+
 	protected function get($url, $query = array())
 	{
 		return $this->apiCall('get', $url, $query);
@@ -327,6 +344,8 @@ class SC2Ranks
 
 		$resultData = $this->jsonDecode($result);
 		$this->checkForErrors($resultData);
+
+		$this->creditsSpent[$url] = $this->curl->getHeaders('X-Credits-Used');
 		return $resultData;
 	}
 
