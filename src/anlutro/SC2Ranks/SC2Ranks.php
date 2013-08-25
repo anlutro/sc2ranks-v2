@@ -284,7 +284,7 @@ class SC2Ranks
 		return $this->post($url, $data);
 	}
 
-	public function addCdivPlayer($cdivId, array $players)
+	public function addCdivPlayers($cdivId, array $players)
 	{
 		$url = 'http://api.sc2ranks.com/v2/custom-divisions/manage/'.$cdivId;
 
