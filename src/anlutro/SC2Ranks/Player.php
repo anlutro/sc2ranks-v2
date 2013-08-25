@@ -20,8 +20,8 @@ class Player
 			$this->bnetId = $url[6];
 		} elseif (strpos($url, 'sc2ranks.com') !== FALSE) {
 			$url = explode('/', $url);
-			$this->region = $url[3];
-			$this->bnetId = $url[4];
+			$this->region = $url[4];
+			$this->bnetId = $url[5];
 		} else {
 			throw new \InvalidArgumentException('Invalid Battle.net/SC2Ranks URL');
 		}

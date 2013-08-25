@@ -28,6 +28,8 @@ class SC2Ranks
 
 	protected $creditsSpent = array();
 
+	protected $sumCreditsSpent = 0;
+
 	public function __construct($apiKey, $curl = null)
 	{
 		$this->apiKey = $apiKey;
@@ -282,11 +284,35 @@ class SC2Ranks
 		return $this->post($url, $data);
 	}
 
+	public function addCdivPlayer($cdivId, array $players)
+	{
+		$url = 'http://api.sc2ranks.com/v2/custom-divisions/manage/'.$cdivId;
+
+		$data = array('characters' => array());
+		foreach ($players as $player) {
+			$data['characters'][] = $player->toArray();
+		}
+
+		return $this->post($url, $data);
+	}
+
 	public function removeCdivPlayer($cdivId, Player $player)
 	{
 		$url = 'http://api.sc2ranks.com/v2/custom-divisions/manage/'.$cdivId;
 
 		$data = array('characters' => array($player->toArray()));
+
+		return $this->delete($url, $data);
+	}
+
+	public function removeCdivPlayers($cdivId, array $players)
+	{
+		$url = 'http://api.sc2ranks.com/v2/custom-divisions/manage/'.$cdivId;
+
+		$data = array('characters' => array());
+		foreach ($players as $player) {
+			$data['characters'][] = $player->toArray();
+		}
 
 		return $this->delete($url, $data);
 	}
@@ -298,7 +324,7 @@ class SC2Ranks
 
 	public function getSumCreditsSpent()
 	{
-		return array_sum($this->creditsSpent);
+		return $this->sumCreditsSpent;
 	}
 
 	public function getCreditsSpent()
@@ -345,9 +371,24 @@ class SC2Ranks
 		}
 
 		$resultData = $this->jsonDecode($result);
+
+		if ($resultData === false) {
+			var_dump($result);
+			var_dump($this->curl->getInfo());
+			var_dump($this->curl->getHeaders());
+			throw new \UnexpectedValueException('Could not decode response into JSON.');
+		}
+
 		$this->checkForErrors($resultData);
 
-		$this->creditsSpent[$url] = $this->curl->getHeaders('X-Credits-Used');
+		$spent = $this->curl->getHeaders('X-Credits-Used');
+		$this->creditsSpent[] = array(
+			'method' => $method,
+			'url' => $url,
+			'credits' => $spent
+		);
+		$this->sumCreditsSpent += $spent;
+
 		return $resultData;
 	}
 
@@ -369,7 +410,11 @@ class SC2Ranks
 
 	protected function jsonDecode($str)
 	{
-		return json_decode($str, $this->returnArray);
+		if ($this->returnArray) {
+			return json_decode($str, true);
+		} else {
+			return json_decode($str);
+		}
 	}
 
 	protected function jsonEncode($str)

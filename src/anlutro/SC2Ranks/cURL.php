@@ -78,13 +78,13 @@ class cURL
 	protected function setPostData($data)
 	{
 		$postData = http_build_query($data);
-		curl_setopt($this->ch, CURLOPT_POSTFIELDS, $data);
+		curl_setopt($this->ch, CURLOPT_POSTFIELDS, $postData);
 	}
 
 	protected function exec()
 	{
 		if ($this->method == 'post') {
-			curl_setopt($this->ch, CURLOPT_POST, true);
+			curl_setopt($this->ch, CURLOPT_POST, 1);
 		} elseif ($this->method == 'delete') {
 			curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
 		}
