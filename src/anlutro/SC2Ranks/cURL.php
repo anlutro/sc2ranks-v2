@@ -5,6 +5,8 @@ class cURL
 {
 	protected $headers = array();
 
+	protected $method = 'get';
+
 	protected $lastResponse;
 
 	protected $lastResponseInfo;
@@ -13,30 +15,16 @@ class cURL
 
 	public function get($url, array $query = array())
 	{
-		$this->init();
-		
-		if (!empty($query)) {
-			$queryString = http_build_query($query);
-			$url .= '?' . $queryString;
-		}
-
-		$this->setUrl($url);
+		$this->init($url, $query);
 
 		return $this->exec();
 	}
 
 	public function post($url, array $query = array(), array $data = array())
 	{
-		$this->init();
+		$this->init($url, $query);
 
-		if (!empty($query)) {
-			$queryString = http_build_query($query);
-			$url .= '?' . $queryString;
-		}
-
-		$this->setUrl($url);
-
-		$this->isPost(true);
+		$this->method = 'post';
 		$this->setPostData($data);
 
 		return $this->exec();
@@ -44,42 +32,12 @@ class cURL
 
 	public function delete($url, array $query = array(), array $data = array())
 	{
-		$this->init();
+		$this->init($url, $query);
 
-		if (!empty($query)) {
-			$queryString = http_build_query($query);
-			$url .= '?' . $queryString;
-		}
-
-		$this->setUrl($url);
-
-		curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
+		$this->method = 'delete';
 		$this->setPostData($data);
 
 		return $this->exec();
-	}
-
-	protected function init()
-	{
-		$this->ch = curl_init();
-		curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($this->ch, CURLOPT_HEADER, true);
-	}
-
-	protected function setUrl($url)
-	{
-		curl_setopt($this->ch, CURLOPT_URL, $url);
-	}
-
-	protected function isPost($val)
-	{
-		curl_setopt($this->ch, CURLOPT_POST, $val);
-	}
-
-	protected function setPostData($data)
-	{
-		$postData = http_build_query($data);
-		curl_setopt($this->ch, CURLOPT_POSTFIELDS, $data);
 	}
 
 	public function addHeader($value)
@@ -101,8 +59,36 @@ class cURL
 		return $this->lastResponseInfo;
 	}
 
+	protected function init($url = null, $query = null)
+	{
+		$this->ch = curl_init();
+		curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($this->ch, CURLOPT_HEADER, true);
+
+		if ($url && $query) {
+			$queryString = http_build_query($query);
+			$url .= '?' . $queryString;
+		}
+
+		if ($url) {
+			curl_setopt($this->ch, CURLOPT_URL, $url);
+		}
+	}
+
+	protected function setPostData($data)
+	{
+		$postData = http_build_query($data);
+		curl_setopt($this->ch, CURLOPT_POSTFIELDS, $data);
+	}
+
 	protected function exec()
 	{
+		if ($this->method == 'post') {
+			curl_setopt($this->ch, CURLOPT_POST, true);
+		} elseif ($this->method == 'delete') {
+			curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
+		}
+
 		curl_setopt($this->ch, CURLOPT_HTTPHEADER, $this->headers);
 
 		$response = curl_exec($this->ch);
