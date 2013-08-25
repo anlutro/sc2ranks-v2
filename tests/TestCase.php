@@ -7,6 +7,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		$this->curl = m::mock('curl');
+		$this->curl->shouldReceive('getHeaders')->with('X-Credits-Used');
 		$this->apiKey = array('api_key' => 'test_api_key');
 		$this->sc2r = new SC2Ranks('test_api_key', $this->curl);
 	}
