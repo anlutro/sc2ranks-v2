@@ -250,6 +250,7 @@ class SC2Ranks
 			'expansion' => $this->default['expansion'],
 			'bracket' => $this->default['bracket'],
 			'league' => $this->default['league'],
+			'limit' => 25,
 		);
 
 		$url = 'http://api.sc2ranks.com/v2/custom-divisions/teams/'.$cdivId;
@@ -262,6 +263,7 @@ class SC2Ranks
 	{
 		$default = array(
 			'region' => $this->default['region'],
+			'limit' => 25,
 		);
 
 		$data = array_merge($default, $options);
