@@ -3,6 +3,11 @@
 
 A simple object-oriented implementation of the second version of SC2Ranks API. The implementation parses JSON returned from the SC2Ranks API server and doesn't do anything to manipulate it. Check out the [API documentation](http://www.sc2ranks.com/api) for information on how the returned data is structured.
 
+Package is still in development and can't be considered stable, but should be functional. Please report any problems via the Github issues page.
+
+## Installation
+Install as a [Composer](http://getcomposer.org) package: `composer require anlutro\sc2ranks-v2:dev-master`
+
 ## Usage
 ```php
 $sc2r = new \anlutro\SC2Ranks\SC2Ranks('my_api_key');
