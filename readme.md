@@ -25,6 +25,11 @@ try {
 ## Functions
 - `setDefault(array $array)` Pass an array of default values for league, region, bracket and expansion.
 - `returnArray()` Return associative arrays instead of objects.
+- `getRemainingCredits()` See how many remaining credits for API calls you have.
+- `getsumCreditsSpent()` Get the sum of credits spent during the class's lifetime.
+- `getCreditsSpentLast()` Get how many credits were spent on the last request.
+- `getCreditsSpent()` Get an array of the calls ran and how many credits were spent on each.
+
 - `getPlayerFromProfileUrl($url)` Get a Player object from a Battle.net or SC2Ranks profile URL.
 - `createPlayer($region, $bnetId)` Get a Player object from region and Battle.net ID.
 - `getPlayerCharacter(Player $player)` Get the character of a player.
@@ -42,7 +47,7 @@ try {
 - `getCdivCharacters($divId, $options = array())` Get the characters of a custom division.
 - `addCdivPlayer($divId, Player $player)` Add a player to a custom division.
 - `removeCdivPlayer($divId, Player $player)` Remove a player from a custom division.
-- `getRemainingCredits()` See how many remaining credits for API calls you have.
+- `addCdivPlayers` and `removeCdivPlayers` can be used in the same way, but you can pass an array of Player objects to add/remove more than one at the time.
 
 # Contact
 Open an issue on GitHub if you have any problems or suggestions.
