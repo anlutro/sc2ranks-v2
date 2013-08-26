@@ -14,14 +14,16 @@ class Player
 
 	public function parseUrl($url)
 	{
+		$url = str_replace('http://', '', $url);
+
 		if (strpos($url, 'battle.net') !== FALSE) {
 			$url = explode('/', $url);
-			$this->region = substr($url[2], 0, strpos($url[2], '.'));
-			$this->bnetId = $url[6];
+			$this->region = substr($url[0], 0, strpos($url[0], '.'));
+			$this->bnetId = $url[4];
 		} elseif (strpos($url, 'sc2ranks.com') !== FALSE) {
 			$url = explode('/', $url);
-			$this->region = $url[4];
-			$this->bnetId = $url[5];
+			$this->region = $url[2];
+			$this->bnetId = $url[3];
 		} else {
 			throw new \InvalidArgumentException('Invalid Battle.net/SC2Ranks URL');
 		}
