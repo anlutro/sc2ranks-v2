@@ -1,6 +1,8 @@
 <?php
 namespace anlutro\SC2Ranks;
 
+use anlutro\cURL\cURL;
+
 class SC2Ranks
 {
 	protected $allowed = array(
