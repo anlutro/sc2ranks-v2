@@ -1,17 +1,39 @@
 <?php
+/**
+ * SC2Ranks v2 API - PHP library
+ * 
+ * @author  Andreas Lutro <anlutro@gmail.com>
+ * @license http://opensource.org/licenses/MIT
+ * @package anlutro/sc2ranks-v2
+ */
+
 namespace anlutro\SC2Ranks;
 
+/**
+ * Class for storing player data in SC2ranks context.
+ */
 class Player
 {
 	public $region;
 	public $bnetId;
 
-	public function __construct($region=null, $bnetId=null)
+	/**
+	 * @param string $region eu/am etc.
+	 * @param string $bnetId Should be numeric
+	 */
+	public function __construct($region = null, $bnetId = null)
 	{
 		$this->region = $region;
 		$this->bnetId = $bnetId;
 	}
 
+	/**
+	 * Parse a battle.net or sc2ranks url, extracting region and bnetID.
+	 *
+	 * @param  string $url
+	 *
+	 * @return void
+	 */
 	public function parseUrl($url)
 	{
 		$url = str_replace('http://', '', $url);
@@ -29,6 +51,12 @@ class Player
 		}
 	}
 
+	/**
+	 * Cast the player to an array that can be passed as POST data to the
+	 * SC2Ranks API.
+	 *
+	 * @return array
+	 */
 	public function toArray()
 	{
 		return array(

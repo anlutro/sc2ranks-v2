@@ -1,8 +1,19 @@
 <?php
+/**
+ * SC2Ranks v2 API - PHP library
+ * 
+ * @author  Andreas Lutro <anlutro@gmail.com>
+ * @license http://opensource.org/licenses/MIT
+ * @package anlutro/sc2ranks-v2
+ */
+
 namespace anlutro\SC2Ranks;
 
 use anlutro\cURL\cURL;
 
+/**
+ * The main class for interacting with SC2Ranks.
+ */
 class SC2Ranks
 {
 	protected $allowed = array(
@@ -38,21 +49,46 @@ class SC2Ranks
 		$this->curl = $curl ?: new cURL;
 	}
 
+	/**
+	 * Set the default options.
+	 *
+	 * @param array $options
+	 */
 	public function setDefault(array $options)
 	{
 		$this->default = array_merge($this->default, $options);
 	}
 
+	/**
+	 * Whether the class should return arrays instead of StdClass when fetching
+	 * results from the API.
+	 *
+	 * @param  boolean $value
+	 * 
+	 * @return void
+	 */
 	public function returnArray($value = true)
 	{
 		$this->returnArray = $value;
 	}
 
+	/**
+	 * Get the underlying cURL instance.
+	 *
+	 * @return \anlutro\cURL\cURL
+	 */
 	public function getCurl()
 	{
 		return $this->curl;
 	}
 
+	/**
+	 * Get info on a player from an URL.
+	 *
+	 * @param  string $profileUrl
+	 *
+	 * @return Player
+	 */
 	public function getPlayerFromProfileUrl($profileUrl)
 	{
 		$player = new Player;
@@ -60,6 +96,14 @@ class SC2Ranks
 		return $player;
 	}
 
+	/**
+	 * Create a player instance when you know the region and bnet ID.
+	 *
+	 * @param  string $region
+	 * @param  string $bnetId
+	 *
+	 * @return Player
+	 */
 	public function createPlayer($region, $bnetId)
 	{
 		return new Player($region, $bnetId);
@@ -247,7 +291,7 @@ class SC2Ranks
 		return $this->post($url, array());
 	}
 
-	public function getCdivTeams($cdivId, $options = array())
+	public function getCdivTeams($cdivId, array $options = array())
 	{
 		$default = array(
 			'rank_region' => $this->default['region'],
@@ -263,7 +307,7 @@ class SC2Ranks
 		return $this->post($url, $data);
 	}
 
-	public function getCdivCharacters($cdivId, $options = array())
+	public function getCdivCharacters($cdivId, array $options = array())
 	{
 		$default = array(
 			'region' => $this->default['region'],
@@ -354,6 +398,16 @@ class SC2Ranks
 		return $this->apiCall('delete', $url, $query, $data);
 	}
 
+	/**
+	 * Make an API call to SC2ranks.
+	 *
+	 * @param  string $method get/post/delete
+	 * @param  string $url
+	 * @param  array  $query  query string
+	 * @param  array  $data   post data
+	 *
+	 * @return array
+	 */
 	protected function apiCall($method, $url, array $query = array(), array $data = array())
 	{
 		$method = strtolower($method);
@@ -377,7 +431,7 @@ class SC2Ranks
 		$resultData = $this->jsonDecode($result);
 
 		if ($resultData === false) {
-			throw new \UnexpectedValueException('Could not decode response into JSON.');
+			throw new \UnexpectedValueException('Response did not contain valid JSON.');
 		}
 
 		$this->checkForErrors($resultData);
@@ -393,6 +447,15 @@ class SC2Ranks
 		return $resultData;
 	}
 
+	/**
+	 * Validate POST data to make sure it only contains allowed values.
+	 *
+	 * @see    $allowed
+	 * @param  array $data
+	 *
+	 * @throws \InvalidArgumentException
+	 * @return void
+	 */
 	protected function validate($data)
 	{
 		foreach ($data as $key => $val) {
@@ -402,6 +465,13 @@ class SC2Ranks
 		}
 	}
 
+	/**
+	 * Check a response for errors.
+	 *
+	 * @param  mixed $result
+	 *
+	 * @throws SC2RanksException
+	 */
 	protected function checkForErrors($result)
 	{
 		if (($this->returnArray && isset($result['error'])) || isset($result->error)) {
