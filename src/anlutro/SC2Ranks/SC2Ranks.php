@@ -364,20 +364,19 @@ class SC2Ranks
 
 		$this->validate($query);
 
+		$url = $this->curl->buildUrl($url, $query);
+
 		if ($method == 'get') {
-			$result = $this->curl->get($url, $query);	
+			$result = $this->curl->get($url);
 		} elseif ($method == 'post') {
-			$result = $this->curl->post($url, $query, $data);
+			$result = $this->curl->post($url, $data);
 		} elseif ($method == 'delete') {
-			$result = $this->curl->delete($url, $query, $data);
+			$result = $this->curl->delete($url, $data);
 		}
 
 		$resultData = $this->jsonDecode($result);
 
 		if ($resultData === false) {
-			var_dump($result);
-			var_dump($this->curl->getInfo());
-			var_dump($this->curl->getHeaders());
 			throw new \UnexpectedValueException('Could not decode response into JSON.');
 		}
 
